@@ -14,5 +14,6 @@ ingredients.forEach((ingredient) => {
   ingredientsRef.classList.add("item");
   ingredientsRef.textContent = ingredient;
   nameEl.push(ingredientsRef);
-  ulRef.append(ingredientsRef);
+ 
 });
+ ulRef.append(...nameEl);

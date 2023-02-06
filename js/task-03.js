@@ -14,12 +14,9 @@ const images = [
 ];
 
 const ulRef = document.querySelector(".gallery");
-images.forEach((el) => {
-  ulRef.insertAdjacentHTML(
-    "afterbegin",
-    `<li><img src = "${el.url}" alt = "${el.alt}"  width = "100%" height = "auto" /></li>`
-  );
-});
+const markup = images.map(el => `<li><img src = "${el.url}" alt = "${el.alt}" width = "100%" height = "auto" /></li>`).join('');
+ulRef.insertAdjacentHTML(
+  "afterbegin", markup);
 ulRef.style.display = "flex";
 ulRef.style.listStyle = "none";
 ulRef.style.gap = "20px";
